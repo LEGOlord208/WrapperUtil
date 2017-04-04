@@ -22,10 +22,10 @@ This API needs to be enabled using the `-p` flag.
 
 Before you close the program, print `wrapperutil` and then a JSON:
 
-| Key     | | Type | Description                                  |
-|---------| |------| -------------------------------------------  |
-| Restart | | bool | Restarts the program. Less timeout than `-r` |
-| Exit    | | bool | Exits the program, overriding the `-r` flag  |
+| Key     | Type | Description                                  |
+|---------|------| -------------------------------------------  |
+| Restart | bool | Restarts the program. Less timeout than `-r` |
+| Exit    | bool | Exits the program, overriding the `-r` flag  |
 
 Example:  
 ```wrapperutil{"Restart":true}```
