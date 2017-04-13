@@ -5,14 +5,15 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/fatih/color"
-	"github.com/legolord208/stdutil"
 	"io"
 	"os"
 	"os/exec"
 	"os/signal"
 	"strings"
 	"time"
+
+	"github.com/fatih/color"
+	"github.com/legolord208/stdutil"
 )
 
 const RESTART_TIMEOUT = 10
@@ -114,13 +115,8 @@ loop:
 
 		if timer {
 			end := time.Now()
-			diff := end.Sub(start)
 
-			msec := int(diff.Nanoseconds()/time.Millisecond.Nanoseconds()) % 1000
-			sec := int(diff.Seconds()) % 60
-			min := int(diff.Minutes())
-
-			fmt.Printf("Program finished! Took %02d:%02d,%03d\n", min, sec, msec)
+			fmt.Println("Program finished! Took " + end.Sub(start).String())
 		}
 
 		var packet Packet
